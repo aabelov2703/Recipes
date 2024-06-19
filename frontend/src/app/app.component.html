@@ -1,0 +1,14 @@
+<!--
+  <router-outlet></router-outlet>
+-->
+<div class="flex flex-col h-full">
+  <app-navbar />
+  <main class="flex-1 overflow-y-auto">
+    @if(user) {
+    <app-home-page />
+    } @else {
+    <app-auth />
+    }
+  </main>
+  <app-footer />
+</div>

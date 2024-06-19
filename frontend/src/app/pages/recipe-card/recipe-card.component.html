@@ -1,0 +1,56 @@
+<mat-card class="example-card h-full flex">
+  <mat-card-header>
+    <img
+      mat-card-avatar
+      class="example-header-image"
+      src="https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/7b/46/f0/7b46f06f-6e14-7da0-6b2b-6dd26c6a738a/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg"
+    />
+    <mat-card-title>{{ recipe.title }}</mat-card-title>
+    <mat-card-subtitle>{{ recipe.user.fullName }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    class="h-[300px] object-cover"
+    mat-card-image
+    [src]="recipe.image"
+    alt="Photo of a Shiba Inu"
+  />
+  <div class="flex-1 flex flex-col justify-between">
+    <mat-card-content>
+      <p>{{ recipe.description }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div>
+        <button
+          (click)="likeRecipe()"
+          mat-icon-button
+          aria-label="Example icon button with a home icon"
+          [ngClass]="{ liked: recipe.likes.includes(user.id) }"
+        >
+          <mat-icon>favorite</mat-icon>
+        </button>
+        <button
+          (click)="openEditRecipeForm()"
+          mat-icon-button
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon>share</mat-icon>
+        </button>
+      </div>
+      <div>
+        <button
+          (click)="deleteRecipe()"
+          mat-icon-button
+          aria-label="Example icon button with a home icon"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+  </div>
+</mat-card>

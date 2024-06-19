@@ -1,0 +1,20 @@
+<p>
+  <mat-toolbar class="flex items-center justify-between" color="primary">
+    <div>
+      <span>My App</span>
+    </div>
+    <div class="flex gap-6">
+      @if (user?.fullName) {
+      <div class="font-thin text-base py-2">{{ user.fullName }}</div>
+      <button
+        mat-icon-button
+        class="border border-red-300 px-4 rounded text transition-all duration-200 shadow shadow-red-950 hover:border-red-800 hover:shadow-black hover:bg-red-750"
+        aria-label="Example icon-button with share icon"
+        (click)="onLogout()"
+      >
+        Logout
+      </button>
+      }
+    </div>
+  </mat-toolbar>
+</p>
